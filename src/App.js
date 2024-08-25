@@ -20,7 +20,7 @@ function App() {
       const parsedData = JSON.parse(jsonInput);
       
       // Send POST request to the backend
-      const res = await axios.post('https://sarthak-bajaj-test-gzvp.onrender.com', { data: parsedData.data });
+      const res = await axios.post('https://sarthak-bajaj-test-gzvp.onrender.com/bfhl', { data: parsedData.data });
       setResponse(res.data);
     } catch (err) {
       setError('Invalid JSON format or API error.');
