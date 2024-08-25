@@ -16,15 +16,22 @@ function App() {
   const handleSubmit = async () => {
     try {
       setError('');
-      // Validate JSON format
+      // Validate and parse JSON input
       const parsedData = JSON.parse(jsonInput);
+  
+      // Check if parsedData contains the 'data' field
+      if (!parsedData || !parsedData.data) {
+        setError('Invalid JSON format or missing "data" field.');
+        return;
+      }
       
       // Send POST request to the backend
       const res = await axios.post('https://sarthak-bajaj-test-gzvp.onrender.com/bfhl', { data: parsedData.data });
       setResponse(res.data);
     } catch (err) {
       setError('Invalid JSON format or API error.');
-    }
+      console.error(err); // Log the error for debugging
+    }
   };
 
   const handleDropdownChange = (e) => {
