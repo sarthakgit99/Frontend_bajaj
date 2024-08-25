@@ -18,7 +18,7 @@ function App() {
       setError('');
       // Validate and parse JSON input
       const parsedData = JSON.parse(jsonInput);
-      alert(parsedData);
+      //alert(parsedData);
       // Check if parsedData contains the 'data' field
       if (!parsedData || !parsedData.data) {
         setError('Invalid JSON format or missing "data" field.');
