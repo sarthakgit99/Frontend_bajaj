@@ -18,7 +18,7 @@ function App() {
       setError('');
       // Validate and parse JSON input
       const parsedData = JSON.parse(jsonInput);
-  
+      alert(parsedData);
       // Check if parsedData contains the 'data' field
       if (!parsedData || !parsedData.data) {
         setError('Invalid JSON format or missing "data" field.');
@@ -31,7 +31,7 @@ function App() {
     } catch (err) {
       setError('Invalid JSON format or API error.');
       console.error(err); // Log the error for debugging
-    }
+    }
   };
 
   const handleDropdownChange = (e) => {
@@ -64,6 +64,7 @@ function App() {
   return (
     <div className="App">
       <h1>21BPS1518</h1>
+      <p>Since Render is a free instance ,it will take some time to load</p>
       <textarea
         rows="5"
         placeholder='Enter JSON here...'
